@@ -42,4 +42,4 @@ jobs:
       - name: Deploy to EKS
         run: |
           aws eks --region ${{ secrets.AWS_REGION }} update-kubeconfig --name ${{ secrets.CLUSTER_NAME }}
-          helm upgrade --install netflix-clone ./charts/netflix-clone --set image.repository=gitforcodedash/demo,image.tag=backup_netflex  # Adjust for your Helm chart and image
+          helm upgrade --install demo ./demo --set image.repository=gitforcodedash/demo,image.tag=backup_netflex  # Adjust for your Helm chart and image
